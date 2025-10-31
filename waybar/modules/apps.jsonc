@@ -1,0 +1,30 @@
+{
+    "custom/logo": {
+        "format": "",
+        "on-click": "custom/omarchy"
+    },
+    "custom/terminal": {
+        "format": "",
+        "on-click": "alacritty"
+    },
+    "custom/thunderbird": {
+        "format": "",
+        "on-click": "thunderbird"
+    },
+    "custom/zen": {
+        "format": "",
+        "on-click": "zen-browser"
+    },
+    "custom/spotify": {
+        "format": "",
+        "on-click": "spotify"
+    },
+    "custom/code": {
+        "format": "",
+        "on-click": "code"
+    },
+    "custom/steam": {
+        "format": "",
+        "on-click": "steam"
+    }
+}

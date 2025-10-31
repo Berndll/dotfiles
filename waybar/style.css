@@ -1,0 +1,134 @@
+/* @import "../omarchy/current/theme/waybar.css"; */
+
+window#waybar {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
+  color: #d59ef5;
+  min-height: 25px;
+  font-family: 'CaskaydiaMono Nerd Font';
+  font-size: 15px;
+}
+
+.modules-left {
+
+}
+
+.modules-right {
+}
+
+.modules-center {
+  margin: 2px 0 2px 0;
+  padding: 1px 5px 1px 5px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 17px 17px 17px 17px;
+  border: 1px solid #9f5197;
+}
+
+#workspaces button {
+  all: unset;
+  padding: 0 10px;
+  margin: 0 5px;
+  min-width: 9px;
+  background: none;
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  border: none;
+  border-radius: 0;
+  color: rgb(213, 158, 245);
+}
+
+#workspaces button:hover,
+#workspaces button:focus,
+#workspaces button:active,
+#workspaces button.focused,
+#workspaces button.active,
+#workspaces button:backdrop {
+  background: none;
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  border: none;
+}
+
+#workspaces button.empty {
+  opacity: 0.5;
+}
+
+#apps {
+  margin: 2px 0 2px 15px;
+  padding: 1px 10px 1px 5px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 17px 17px 17px 17px;
+  border: 1px solid #9f5197;
+}
+
+#custom-code,
+#custom-terminal,
+#custom-thunderbird,
+#custom-zen,
+#custom-spotify,
+#custom-code,
+#custom-steam {
+  min-width: 12px;
+  margin: 0;
+  padding: 0 10 0 10;
+  font-size: 20;
+}
+#custom-logo {
+  padding: 0 13 0 7;
+  margin: 2px 0 2px 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 17px 17px 17px 17px;
+  border: 1px solid #9f5197;
+}
+#custom-code { font-size: 22px; }
+
+#custom-expand-icon {
+  margin-left: 8.75px;
+  margin-right: 6px;
+}
+#tray {
+  margin-left: 10px;
+}
+#pulseaudio {
+  margin: 2px 0 2px 15px;
+  padding: 1px 10px 1px 10px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 17px 17px 17px 17px;
+  border: 1px solid #9f5197;
+}
+#network {
+  margin-left: 8.75px;
+  margin-right: 13px;
+}
+
+#cpu,
+#memory,
+#system {
+  margin: 2px 0 2px 15px;
+  padding: 1px 10px 1px 10px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 17px 17px 17px 17px;
+  border: 1px solid #9f5197;
+}
+
+tooltip {
+  padding: 2px;
+}
+
+#custom-update {
+  font-size: 10px;
+}
+
+.hidden { opacity: 0; }
+
+#custom-screenrecording-indicator {
+  min-width: 12px;
+  margin-left: 8.75px;
+  font-size: 10px;
+}
+
+#custom-screenrecording-indicator.active {
+  color: #a55555;
+}
