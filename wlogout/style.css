@@ -1,0 +1,64 @@
+window {
+    font-family: CaskaydiaMono Nerd Font;
+    font-size: 12pt;
+    color: #cdd6f4; 
+    background-color: rgba(0, 0, 0, .8);
+}
+button {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 15%;
+    border: none;
+    color: #fbc7c7;
+    text-shadow: none;
+    border-radius: 40px 40px 40px 40px;
+    background-color: rgba(1, 121, 111, 0);
+    /* margin: 5px; */
+    margin: 10px 70px 500px 70px;
+    transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: rgba(251, 199, 199, 0.05);
+}
+
+/* button:: {
+    border-radius: 40px;
+} */
+
+/* 
+#lock {
+    background-image: image(url("/home/pc/.config/wlogout/icons/lock.png"));
+}
+#lock:hover {
+    background-image: image(url("/home/pc/.config/wlogout/icons/lock-hover.png"));
+}
+
+#logout {
+    background-image: image(url("/home/pc/.config/wlogout/icons/logout.png"));
+}
+#logout:hover {
+    background-image: image(url("/home/pc/.config/wlogout/icons/logout-hover.png"));
+} */
+
+#suspend {
+    background-image: image(url("/home/pc/.config/wlogout/icons/sleep.png"));
+} 
+#suspend:hover {
+    background-image: image(url("/home/pc/.config/wlogout/icons/sleep-hover.png"));
+}
+
+#shutdown {
+    margin-left: 10px;
+    background-image: image(url("/home/pc/.config/wlogout/icons/power.png"));
+}
+#shutdown:hover {
+    background-image: image(url("/home/pc/.config/wlogout/icons/power-hover.png"));
+}
+
+#reboot {
+    background-image: image(url("/home/pc/.config/wlogout/icons/restart.png"));
+}
+#reboot:hover {
+    background-image: image(url("/home/pc/.config/wlogout/icons/restart-hover.png"));
+}

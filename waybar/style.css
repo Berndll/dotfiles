@@ -1,33 +1,39 @@
-/* @import "../omarchy/current/theme/waybar.css"; */
-
 window#waybar {
-  background-color: rgba(0, 0, 0, 0.3);
-  border: none;
-  color: #d59ef5;
-  min-height: 25px;
+  background-color: rgba(24, 0, 40, 0.3);
+  /* border: none; */
+  /* border-bottom: 1px solid rgba(159, 81, 151, 0.6); */
   font-family: 'CaskaydiaMono Nerd Font';
+  color: #d59ef5;
   font-size: 15px;
+  /* min-height: 500px; */
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+  background-color: rgba(25, 0, 40, 0.5);
+  border-radius: 18px;
+  /* border: px solid rgba(159, 81, 151, 0.5); */
+  /* border: 3px solid rgba(71, 0, 118, 0.5); */
+  margin: 0;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 .modules-left {
-
+  /*border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;*/
+  /* margin-right:; */
 }
-
 .modules-right {
-}
-
-.modules-center {
-  margin: 2px 0 2px 0;
-  padding: 1px 5px 1px 5px;
-  background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 17px 17px 17px 17px;
-  border: 1px solid #9f5197;
-}
+  /*border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;*/
+} 
 
 #workspaces button {
   all: unset;
-  padding: 0 10px;
-  margin: 0 5px;
+  /* padding: 0 5px; */
+  margin: 0 10px;
   min-width: 9px;
   background: none;
   background-color: transparent;
@@ -35,7 +41,7 @@ window#waybar {
   box-shadow: none;
   border: none;
   border-radius: 0;
-  color: rgb(213, 158, 245);
+  font-size: 15px;
 }
 
 #workspaces button:hover,
@@ -51,84 +57,122 @@ window#waybar {
   border: none;
 }
 
-#workspaces button.empty {
+/* #workspaces button.empty {
   opacity: 0.5;
-}
+} */
 
-#apps {
-  margin: 2px 0 2px 15px;
-  padding: 1px 10px 1px 5px;
-  background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 17px 17px 17px 17px;
-  border: 1px solid #9f5197;
-}
+#custom-logo,
+#custom-cava,
+#cpu,
+#memory,
+#temperature,
 
-#custom-code,
-#custom-terminal,
-#custom-thunderbird,
-#custom-zen,
-#custom-spotify,
-#custom-code,
-#custom-steam {
-  min-width: 12px;
-  margin: 0;
-  padding: 0 10 0 10;
-  font-size: 20;
-}
-#custom-logo {
-  padding: 0 13 0 7;
-  margin: 2px 0 2px 0;
-  background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 17px 17px 17px 17px;
-  border: 1px solid #9f5197;
-}
-#custom-code { font-size: 22px; }
+#workspaces,
 
-#custom-expand-icon {
-  margin-left: 8.75px;
-  margin-right: 6px;
-}
-#tray {
-  margin-left: 10px;
-}
-#pulseaudio {
-  margin: 2px 0 2px 15px;
+#mpris,
+#pulseaudio,
+#network,
+#clock,
+#tray-expander,
+#custom-uptime,
+#custom-pacman,
+#custom-notification {
+  margin: 4px 0px 4px 15px;
   padding: 1px 10px 1px 10px;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(24, 0, 40, 0.55);
   border-radius: 17px 17px 17px 17px;
-  border: 1px solid #9f5197;
+  border: 1.5px solid rgb(159, 81, 151);
+  color: #d59ef5;
 }
-#network {
-  margin-left: 8.75px;
-  margin-right: 13px;
+/* #tray-expander { */
+  /* margin-left: 10px; */
+  /* padding-right: 3px; */
+/* } */
+
+#custom-logo {
+  padding-left: 6px;
+  padding-right: 12px;
+  font-size: 18px;
+  /* color: rgb(160, 96, 255);
+  border-color: rgb(150, 45, 255); */
+}
+
+/* #cpu {
+  color: rgb(235, 174, 125);
+  border-color: rgb(207, 118, 58);
+}
+
+#memory {
+  color: rgb(147, 198, 115);
+  border-color: rgb(114, 170, 88);
+}
+
+#temperature {
+  color: rgb(115, 170, 198);
+  border-color: rgb(88, 158, 170);
+} */
+
+/* .modules-center {
+  background-color: transparent;
+} */
+
+/* #pulseaudio, */
+#mpris {
+  color: #1DB954;
+  border-color: rgb(57, 146, 15)
+}
+
+/* #tray-expander {
+  color: rgb(230, 210, 157);
+  border-color: rgb(207, 176, 90);
+} */
+
+#custom-pacman {
+  /* padding: 1px 12px 1px 10px; */
+  /* font-size: larger; */
+  padding-right: 14px;
+  color: rgb(238, 154, 84);
+  border-color: rgb(204, 116, 28);
+}
+
+#custom-notification {
+  font-size: larger;
+  padding-right: 14px;
+  color: rgb(215, 225, 167);
+  border-color: rgb(195, 207, 90);
+}
+
+#pulseaudio {
+  color: rgb(164, 225, 255);
+  border-color: rgb(88, 158, 170);
+}
+
+#custom-logo,
+#mpris,
+#cpu {
+  margin-left: 4px;
+}
+
+#tray-expander,
+#temperature,
+#custom-notification {
+  margin-right: 4px;
 }
 
 #cpu,
 #memory,
-#system {
-  margin: 2px 0 2px 15px;
-  padding: 1px 10px 1px 10px;
-  background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 17px 17px 17px 17px;
-  border: 1px solid #9f5197;
+#temperature,
+#clock,
+#custom-uptime {
+  padding-left: 11px;
+  /* margin-right: 4px; */
+  color: rgb(230, 230, 230);
+  border-color: rgb(186, 186, 186);
 }
 
-tooltip {
-  padding: 2px;
-}
-
-#custom-update {
-  font-size: 10px;
-}
+/* #network {
+  color: rgb(230, 114, 137);
+  border-color: rgb(189, 34, 65);
+} */
 
 .hidden { opacity: 0; }
-
-#custom-screenrecording-indicator {
-  min-width: 12px;
-  margin-left: 8.75px;
-  font-size: 10px;
-}
-
-#custom-screenrecording-indicator.active {
-  color: #a55555;
-}

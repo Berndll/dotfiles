@@ -9,44 +9,57 @@
   ],
   "modules-left": [
     "custom/logo",
-    "group/apps"
+    "hyprland/workspaces",
+    "custom/cava",
+    "group/tray-expander"
   ],
   "modules-center": [
-    "hyprland/workspaces",
-    "custom/screenrecording-indicator"
-  ],
-  "modules-right": [
     "cpu",
     "memory",
-    "pulseaudio",
-    "custom/update",
-    "group/system"
+    "clock",
+    "custom/uptime",
+    "temperature"
   ],
-  "group/apps": {
-    "orientation": "inherit",
-    "modules": [
-        "custom/terminal",
-        "custom/thunderbird",
-        "custom/zen",
-        "custom/code",
-        "custom/spotify",
-        "custom/steam"
-    ]
-  },
-  "group/system": {
-    "orientation": "inherit",
-    "modules": [
-      "group/tray-expander",
-      "network",
-      "clock"
-    ]
-  },
+  "modules-right": [
+    "mpris",
+    "pulseaudio",
+    "custom/pacman",
+    "custom/notification"
+  ],
   "cpu": {
     "format": " {usage}%",
     "tooltip": false
   },
-    "memory": {
-        "format": "  {used}G"
+  "memory": {
+    "format": "  {percentage}%"
+  },
+  "temperature": {
+    "format": " {temperatureC}°C",
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 80,
+    "format-critical": " {temperatureC}°C"
+  },
+
+  "custom/uptime": {
+    "format": "󱎫 {text}",
+    "max-length": 40,
+    "interval": 60, // Remove this if your script is endless and write in loop
+    "exec": "uptime -p | sed -e 's/up //g' -e 's/ hours,/h/g' -e 's/ minutes/m/g'"
+  },
+  "custom/cava": {
+      "exec": "cava -p ~/.config/cava/config_waybar.conf | sed -u 's/;//g;s/0/▂/g;s/1/▂/g;s/2/▃/g;s/3/▄/g;s/4/▅/g;s/5/▆/g;s/6/▇/g;s/7/█/g'",
+      "format": "{}"
+  },
+  "custom/pacman": {
+    "format": "{icon}{0}",
+    "return-type": "json",
+    "format-icons": {
+      "pending-updates": " ",
+      "updated": ""
+    },
+    "exec-if": "which waybar-updates",
+    "exec": "waybar-updates",
+    "on-click": "ghostty -e expect -c 'spawn $env(SHELL); expect \"$\"; send \"yes | yay\"; interact'"
   },
   "hyprland/workspaces": {
     "on-click": "activate",
@@ -67,33 +80,36 @@
     "persistent-workspaces": {
       "1": [],
       "2": [],
-      "3": [],
-      "4": [],
-      "5": []
+      "3": []
     }
   },
   "clock": {
-      "format": "{:L%A %H:%M}",
-      "format-alt": "{:L%d %B W%V %Y}",
-      "tooltip": false,
-      // "on-click-right": "omarchy-launch-floating-terminal-with-presentation omarchy-tz-select"
+      "format": " {:L%H:%M 󰃭 %a %d}",
+      "format-alt": "󰃭 {:L%d %B %Y}",
+      "tooltip": false
+  },
+  "mpris": {
+    "player": "spotify", // This tells Waybar to ONLY look at Spotify
+    "format": " {artist} - {title}",
+    "format-paused": " <i>{artist} - {title}</i>",
+    "on-scroll-up": "playerctl -p spotify volume 0.025+",
+    "on-scroll-down": "playerctl -p spotify volume 0.025-"
   },
   "network": {
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
     "format": "{icon}",
-    "format-wifi": "{icon}",
-    "format-ethernet": "󰀂",
+    "format-wifi": "{icon} {ipaddr}",
+    "format-ethernet": "󰀂 {ipaddr}",
     "format-disconnected": "󰤮",
     "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
     "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
-    "spacing": 1,
-    // "on-click": "omarchy-launch-wifi"
+    "spacing": 1
   },
   "pulseaudio": {
-    "format": "{icon}  {volume}%",
-    "on-click": "$TERMINAL --class=Wiremix -e wiremix",
+    "format": "{icon} {volume}%",
+    "on-click": "ghostty -e wiremix",
     "on-click-right": "pamixer -t",
     "tooltip-format": "Playing at {volume}%",
     "scroll-step": 5,
@@ -101,6 +117,10 @@
     "format-icons": {
       "default": ["", "", ""]
     }
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 17
   },
   "group/tray-expander": {
     "orientation": "inherit",
@@ -110,18 +130,32 @@
     },
     "modules": ["custom/expand-icon", "tray"]
   },
+  "custom/logo": {
+    "format": "",
+    "on-click": "wlogout"
+  },
   "custom/expand-icon": {
-    "format": "",
+    "format": " ",
     "tooltip": false
   },
-  "custom/screenrecording-indicator": {
-    // "on-click": "omarchy-cmd-screenrecord",
-    // "exec": "$OMARCHY_PATH/default/waybar/indicators/screen-recording.sh",
-    "signal": 8,
-    "return-type": "json"
-  },
-  "tray": {
-    "icon-size": 16,
-    "spacing": 17
+  "custom/notification": {
+    "tooltip": true,
+    "format": "<span size='16pt'>{icon}</span>",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂜",
+      "dnd-notification": "󰂠",
+      "dnd-none": "󰪓",
+      "inhibited-notification": "󰂛",
+      "inhibited-none": "󰪑",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
   }
 }
