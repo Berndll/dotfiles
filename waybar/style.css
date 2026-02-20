@@ -10,9 +10,9 @@ window#waybar {
   /* margin: 50px; */
   /* margin: 4px 0px 4px 15px; */
   /* padding: 1px 10px 1px 10px; */
-  background-color: rgba(24, 0, 40, 0.4);
+  background-color: rgba(71, 0, 118, 0.3);
   border-radius: 17px;
-  border: 1px solid rgba(42, 0, 71, 0.1);
+  border: 3px solid rgba(71, 0, 118, 0.15);
   color: rgb(213, 158, 245);
 }
 
@@ -21,6 +21,7 @@ window#waybar {
 .modules-right {
   padding-left: 4px;
   padding-right: 4px;
+  /* margin-top: 4px; */
   background-color: rgba(25, 0, 40, 0.4);
   border-radius: 17px;
   /* border: px solid rgba(159, 81, 151, 0.5); */
@@ -93,10 +94,10 @@ window#waybar {
   /* margin: px 0px 3px 15px; */
   margin: 2px 0px 2px 5px;
   padding: 0px 10px 0px 10px;
-  background-color: rgba(24, 0, 40, 1);
+  background-color: #180028;
   border-radius: 17px 17px 17px 17px;
   /* border: 1.5px solid rgb(159, 81, 151); */
-  border: 1.5px solid rgba(42, 0, 71, 1);
+  border: 1.5px solid #2a0047;
   color: #d59ef5;
   border-right: 2.5px solid rgba(74, 0, 128, 0.65);
   border-left: 2.5px solid rgba(74, 0, 128, 0.65);
@@ -115,7 +116,7 @@ window#waybar {
   font-family: "CaskaydiaMono Nerd Font"; /* MUST use a Nerd Font here */
   font-size: 18px;
   color: #d59ef5;
-  padding: 2px 0px 2px 16;
+  padding: 2px 0px 2px 16px;
   margin: 0px 2px 0px 2px;
   border-radius: 17px;
   background-color: rgba(24, 0, 40, 1);
@@ -207,10 +208,10 @@ window#waybar {
   margin-left: 0px;
 }
 
-#tray-expander,
+#taskbar,
 #temperature,
 #custom-notification {
-  /* margin-right: 2px; */
+  margin-right: 0px;
 }
 
 #cpu,
