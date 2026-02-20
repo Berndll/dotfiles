@@ -1,31 +1,46 @@
 {
   "reload_style_on_change": true,
-  "layer": "top",
+  "layer": "bottom",
   "position": "top",
   "spacing": 0,
-  "height": 26,
+  // "height": 20,
+  "margin-top": 3,
+  "margin-right": 5, 
+  "margin-bottom": 2,
+  "margin-left": 5,
   "include": [
     "./modules/*json*"
   ],
   "modules-left": [
     "custom/logo",
     "hyprland/workspaces",
-    "custom/cava",
-    "group/tray-expander"
+    // "custom/cava",
+    // "group/tray-expander",
+    "wlr/taskbar"
   ],
   "modules-center": [
-    "cpu",
-    "memory",
-    "clock",
+    // "cpu",
+    // "memory",
     "custom/uptime",
+    "clock",
     "temperature"
   ],
   "modules-right": [
     "mpris",
-    "pulseaudio",
-    "custom/pacman",
-    "custom/notification"
+    // "pulseaudio",
+    // "custom/pacman",
+    // "custom/notification"
+    "group/system"
   ],
+  "group/system": {
+    "orientation": "inherit",
+    "modules": [
+      "pulseaudio",
+      "network",
+      "custom/pacman",
+      "custom/notification"
+    ]
+  },  
   "cpu": {
     "format": " {usage}%",
     "tooltip": false
@@ -59,7 +74,7 @@
     },
     "exec-if": "which waybar-updates",
     "exec": "waybar-updates",
-    "on-click": "ghostty -e expect -c 'spawn $env(SHELL); expect \"$\"; send \"yes | yay\"; interact'"
+    "on-click": "ghostty --title=\"Ghostty\" -e expect -c 'spawn $env(SHELL); expect \"$\"; send \"yes | yay\"; interact'"
   },
   "hyprland/workspaces": {
     "on-click": "activate",
@@ -93,14 +108,20 @@
     "format": " {artist} - {title}",
     "format-paused": " <i>{artist} - {title}</i>",
     "on-scroll-up": "playerctl -p spotify volume 0.025+",
-    "on-scroll-down": "playerctl -p spotify volume 0.025-"
+    "on-scroll-down": "playerctl -p spotify volume 0.025-",
+    "tooltip": false,
+    "ignored-players": [
+      "zen-browser"
+    ]
+    // https://docs.gtk.org/gdk3/enum.CursorType.html#boat
+    // "cursor": 
   },
   "network": {
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
     "format": "{icon}",
-    "format-wifi": "{icon} {ipaddr}",
-    "format-ethernet": "󰀂 {ipaddr}",
-    "format-disconnected": "󰤮",
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰀂 ", 
+    "format-disconnected": "󰪎",
     "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
     "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
     "tooltip-format-disconnected": "Disconnected",
@@ -111,7 +132,7 @@
     "format": "{icon} {volume}%",
     "on-click": "ghostty -e wiremix",
     "on-click-right": "pamixer -t",
-    "tooltip-format": "Playing at {volume}%",
+    // "tooltip-format": "Playing at {volume}%",
     "scroll-step": 5,
     "format-muted": "",
     "format-icons": {
@@ -157,5 +178,20 @@
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
     "escape": true
+  },
+  "wlr/taskbar": {
+    "icon-size": 0,
+    "format": "{name}|{title}",
+    "rewrite": {
+        "^.*Ghostty\\|btop.*$": "",      // If btop sets its own window title
+        "^.*Spotify.*": "",
+        "^.*Zen Browser.*$": "",
+        "^.*Ghostty\\|yazi.*$": "󰉋",
+        "^.*Visual Studio Code.*$": "",
+        "^.*discord.*$": "󰙯",
+        "^.*Steam.*$": "",
+        "^.*Ghostty\\|Ghostty$": "󰊠"
+    },
+    "on-click": "activate"
   }
 }

@@ -1,29 +1,40 @@
 window#waybar {
-  background-color: rgba(24, 0, 40, 0.3);
+  /* margin-top: 10px; */
+  /* background-color: rgba(24, 0, 40, 1); */
   /* border: none; */
   /* border-bottom: 1px solid rgba(159, 81, 151, 0.6); */
   font-family: 'CaskaydiaMono Nerd Font';
-  color: #d59ef5;
   font-size: 15px;
+  /* font-weight: 400; */
   /* min-height: 500px; */
+  /* margin: 50px; */
+  /* margin: 4px 0px 4px 15px; */
+  /* padding: 1px 10px 1px 10px; */
+  background-color: rgba(24, 0, 40, 0.4);
+  border-radius: 17px;
+  border: 1px solid rgba(42, 0, 71, 0.1);
+  color: rgb(213, 158, 245);
 }
 
 .modules-left,
 .modules-center,
 .modules-right {
-  background-color: rgba(25, 0, 40, 0.5);
-  border-radius: 18px;
-  /* border: px solid rgba(159, 81, 151, 0.5); */
-  /* border: 3px solid rgba(71, 0, 118, 0.5); */
-  margin: 0;
   padding-left: 4px;
   padding-right: 4px;
+  background-color: rgba(25, 0, 40, 0.4);
+  border-radius: 17px;
+  /* border: px solid rgba(159, 81, 151, 0.5); */
+  border: 1px solid rgba(71, 0, 118, 0.7);
+  /* margin: 3px; */
+  /* padding-left: 4px; */
+  /* padding-right: 4px; */
 }
 
 .modules-left {
   /*border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;*/
-  /* margin-right:; */
+  /* margin-right: 20px; */
+  /* padding-right: 20px; */
 }
 .modules-right {
   /*border-top-right-radius: 0px;
@@ -63,26 +74,57 @@ window#waybar {
 
 #custom-logo,
 #custom-cava,
-#cpu,
-#memory,
+/* #cpu #memory, */
 #temperature,
 
 #workspaces,
 
 #mpris,
-#pulseaudio,
-#network,
+/* #pulseaudio, */
+/* #network,*/
 #clock,
-#tray-expander,
+/* #tray-expander, */
+/* #taskbar, */
 #custom-uptime,
-#custom-pacman,
-#custom-notification {
-  margin: 4px 0px 4px 15px;
-  padding: 1px 10px 1px 10px;
-  background-color: rgba(24, 0, 40, 0.55);
+#system
+/* #custom-pacman, */
+/* #custom-notification */
+{
+  /* margin: px 0px 3px 15px; */
+  margin: 2px 0px 2px 5px;
+  padding: 0px 10px 0px 10px;
+  background-color: rgba(24, 0, 40, 1);
   border-radius: 17px 17px 17px 17px;
-  border: 1.5px solid rgb(159, 81, 151);
+  /* border: 1.5px solid rgb(159, 81, 151); */
+  border: 1.5px solid rgba(42, 0, 71, 1);
   color: #d59ef5;
+  border-right: 2.5px solid rgba(74, 0, 128, 0.65);
+  border-left: 2.5px solid rgba(74, 0, 128, 0.65);
+}
+
+#taskbar {
+  color: white;
+  padding: 0;
+  margin: 0;
+  margin-left: 8px;
+  /* font-size: 1px; */
+  /* background-color: black; */
+}
+#taskbar button {
+  /* background-color: rgba(24, 0, 40, 1); */
+  font-family: "CaskaydiaMono Nerd Font"; /* MUST use a Nerd Font here */
+  font-size: 18px;
+  color: #d59ef5;
+  padding: 2px 0px 2px 16;
+  margin: 0px 2px 0px 2px;
+  border-radius: 17px;
+  background-color: rgba(24, 0, 40, 1);
+  min-width: 30px;
+  /* border-right: 2.5px solid rgba(74, 0, 128, 0.65);
+  border-left: 2.5px solid rgba(74, 0, 128, 0.65); */
+}
+#taskbar button:hover {
+  background-color: rgba(24, 0, 40, 1);
 }
 /* #tray-expander { */
   /* margin-left: 10px; */
@@ -119,7 +161,7 @@ window#waybar {
 /* #pulseaudio, */
 #mpris {
   color: #1DB954;
-  border-color: rgb(57, 146, 15)
+  /* border-color: rgb(57, 146, 15) */
 }
 
 /* #tray-expander {
@@ -130,33 +172,45 @@ window#waybar {
 #custom-pacman {
   /* padding: 1px 12px 1px 10px; */
   /* font-size: larger; */
-  padding-right: 14px;
+  padding-right: 4px;
+  padding-left: 8px;
   color: rgb(238, 154, 84);
-  border-color: rgb(204, 116, 28);
+  /* border-right: 0.5px solid rgba(74, 0, 128, 0.5);
+  border-left: 0.5px solid rgba(74, 0, 128, 0.5); */
+  /* border-radius: 17px; */
+
+  /* border-color: rgb(204, 116, 28); */
 }
 
 #custom-notification {
   font-size: larger;
-  padding-right: 14px;
+  padding-right: 2px;
+  padding-left: 8px;
+  /* border-left: 0.5px solid rgba(74, 0, 128, 0.5); */
+  /* border-radius: 17px; */
   color: rgb(215, 225, 167);
-  border-color: rgb(195, 207, 90);
+  /* border-color: rgb(195, 207, 90); */
 }
 
 #pulseaudio {
+  padding-right: 6px;
   color: rgb(164, 225, 255);
-  border-color: rgb(88, 158, 170);
+  /* border-color: rgb(88, 158, 170); */
+  /* border-right: 0.5px solid rgba(74, 0, 128, 0.5); */
+  /* border-radius: 17px; */
+  /* border-right: 2px solid rgb(213, 158, 245); */
 }
 
 #custom-logo,
 #mpris,
-#cpu {
-  margin-left: 4px;
+#custom-uptime {
+  margin-left: 0px;
 }
 
 #tray-expander,
 #temperature,
 #custom-notification {
-  margin-right: 4px;
+  /* margin-right: 2px; */
 }
 
 #cpu,
@@ -167,12 +221,31 @@ window#waybar {
   padding-left: 11px;
   /* margin-right: 4px; */
   color: rgb(230, 230, 230);
-  border-color: rgb(186, 186, 186);
+  /* border-color: rgb(186, 186, 186); */
 }
 
-/* #network {
-  color: rgb(230, 114, 137);
-  border-color: rgb(189, 34, 65);
-} */
+#network {
+  padding-left: 6px;
+  color: #d37bc9;
+  /* color: rgb(230, 114, 137);
+  border-color: rgb(189, 34, 65); */
+} 
 
 .hidden { opacity: 0; }
+
+tooltip {
+  color: white;
+  background-color:rgba(24, 0, 40, 0.5);
+  text-shadow: none;
+  border-radius: 17px;
+  border: 1px solid rgba(42, 0, 70, 1);
+  border-right: 0.5px solid rgba(74, 0, 128, 0.5);
+  border-left: 0.5px solid rgba(74, 0, 128, 0.5)
+}
+
+tooltip * {
+  color: white;
+  text-shadow: none;
+  border-radius: 17px;
+  padding: 0px 6px 0px 6px;
+}
